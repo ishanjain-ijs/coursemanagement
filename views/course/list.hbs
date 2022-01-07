@@ -1,0 +1,33 @@
+<div>
+
+ 
+<h3 align="center">Courses List</h3>
+</div>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Course</th>
+<th>Id</th>
+<th>Duration(Hrs)</th>
+<th>Fee(INR)</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+{{#each list}}
+<tr align="center">
+
+    
+<td>{{this.courseName}}</td>
+<td>{{this.courseId}}</td>
+<td>{{this.courseDuration}}</td>
+<td>{{this.courseFee}}</td>
+<td>
+<a href="/course/{{this._id}}"> Edit </a>
+<a href="/course/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"> Delete </a>
+</td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+<a class="btn btn-secondary"  href="/course"><i class="fa fa-plus"></i> Create New</a> 
